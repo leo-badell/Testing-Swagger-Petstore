@@ -13,7 +13,7 @@ describe('Testing the Swagger Petstore', () => {
 describe('Testing the Swagger Petstore', () => {
   it('Should update the name of a pet with PUT method', () => {
     cy.fixture('PUTNewPet.json').then((PUTNewPet) => {
-      const newName = 'Kanis';
+      const newName = 'Amane';
       cy.updatePetName(newName, PUTNewPet).then((response) => {
         expect(response.status).to.equal(200);
         expect(response.body.name).to.equal(newName);
