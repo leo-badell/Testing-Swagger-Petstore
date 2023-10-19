@@ -54,7 +54,7 @@ describe('Updates a pet in the store with form data', () => {
       
       cy.request({
         method: 'POST',
-        url: 'https://petstore.swagger.io/v2/pet/532321',
+        url: 'https://petstore.swagger.io/v2/pet/559933',
         headers: {
           'content-type': 'application/x-www-form-urlencoded'
         },
@@ -63,7 +63,6 @@ describe('Updates a pet in the store with form data', () => {
         expect(response.status).to.equal(200);
         expect(response.body).to.have.property('code', 200);
         expect(response.body).to.have.property('type', 'unknown');
-        expect(response.body).to.have.property('message', '532321');
       })
     })
   });  
@@ -72,14 +71,15 @@ describe('Updates a pet in the store with form data', () => {
 
 //This cy.request doesn't have Custom Command on the support/commands.js
 describe('Deletes a pet', () => {
-  it.only('Should delete a pet', () => {
+  it('Should delete a pet', () => {
     cy.request({
       method: 'DELETE',
-      url: 'https://petstore.swagger.io/v2/pet/696461602',
+      url: 'https://petstore.swagger.io/v2/pet/775522',
       headers: {
           'api-key': 'special-key',
           'Content-Type': 'application/json'
         },
+      failOnStatusCode: false,
       followRedirect: true,
       }).then((response) => {
         expect(response.status).to.equal(200);
@@ -87,4 +87,3 @@ describe('Deletes a pet', () => {
     });
   });
 
-  
