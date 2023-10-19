@@ -9,5 +9,6 @@
   },
   "scripts": {
     "test": "cypress run"
-  }
+  },
+  "repository": "https://github.com/leo-badell/Testing-Swagger-Petstore.git"
 }
