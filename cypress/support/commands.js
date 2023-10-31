@@ -75,4 +75,16 @@ Cypress.Commands.add('createNewPet', () => {
       expect(response.status).to.equal(200);
     });
   });
+
+  Cypress.Commands.add('createUser', () => {
+    cy.fixture('createUser.json').then((createUser) => {
+      cy.api({
+        method: 'POST',
+        url: Cypress.env('useBaseUrl4'),
+        body: createUser,
+        followRedirect: true,
+        failOnStatusCode: false
+      }).then(response => { return response }); 
+      });
+    });
   

@@ -1,0 +1,10 @@
+{
+    "id": 10,
+    "username": "ronny",
+    "firstName": "Ronnie",
+    "lastName": "Dio",
+    "email": "rdio@fakemail.com",
+    "password": "88888",
+    "phone": "88888",
+    "userStatus": 1
+  }
