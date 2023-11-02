@@ -3,7 +3,6 @@ Cypress API Testing Project
 This Cypress testing project is dedicated to thoroughly testing various endpoints of the Swagger Petstore API. It encompasses different test cases for both cy.request and cy.api methods, utilizing custom commands in some of them for enhanced functionality.
 
 **pet.cy.js**
-![Captura de tela 2023-11-02 120518](https://github.com/leo-badell/Testing-Swagger-Petstore/assets/91019951/5e86a6e1-51f0-4982-aa87-aca29d85e6d1)
 
 This file contains tests for the Swagger Petstore API related to pets.
 
@@ -20,7 +19,6 @@ Updating a Pet with Form Data (cy.request): Verifies the capability to update a 
 Deleting a Pet (cy.request): Tests the deletion of a pet from the store, ensuring a successful response.
 
 **store.cy.js**
-![Captura de tela 2023-11-02 120625](https://github.com/leo-badell/Testing-Swagger-Petstore/assets/91019951/46049ae2-5c95-45ac-804c-04985006a771)
 
 This file contains tests for the Swagger Petstore API related to store operations.
 
@@ -33,7 +31,6 @@ Deleting a Purchase Order by ID (cy.request): Verifies the ability to delete a p
 Getting Inventory (cy.request): Tests the API endpoint for retrieving inventory data and validates the response data against expected properties.
 
 **user.cy.js**
-![Captura de tela 2023-11-02 120657](https://github.com/leo-badell/Testing-Swagger-Petstore/assets/91019951/d18f2ded-8005-4004-a01f-1f89a462ade9)
 
 This file contains tests for the Swagger Petstore API related to user management, demonstrating both custom commands and cy.api requests.
 
