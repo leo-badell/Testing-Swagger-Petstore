@@ -76,6 +76,7 @@ Cypress.Commands.add('createNewPet', () => {
     });
   });
 
+  //Create user
   Cypress.Commands.add('createUser', () => {
     cy.fixture('createUser.json').then((createUser) => {
       cy.api({

@@ -1,4 +1,4 @@
-// This file contains tests for the Swagger Petstore API
+// This file contains tests with the cy.api method
 
 // This code contains custom command in the commands.js file
 describe('Testing the Swagger Petstore', () => {

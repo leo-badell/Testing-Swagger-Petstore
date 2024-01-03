@@ -59,34 +59,32 @@ it('Should place an order for a pet', () => {
         })
     });
 
-    //This cy.request doesn't have Custom Command on the support/commands.js
+    //This cy.request doesn't have a custom command in the support/commands.js file and uses assertions in an array.
     it('Should get inventory', () => {
-        const bodyRequest = 
-            {
-                "sold": 12,
-                "string": 617,
-                "pending": 2,
-                "available": 264,
-                "totvsRuan": 7,
-                "peric": 90,
-                "Not available": 1
-              }
-        cy.request({
-        method: 'GET',
-        url: `https://petstore.swagger.io/v2/store/inventory`,
-        headers: {
-            'content-type': 'application/json'
-        },
-        body: bodyRequest,
-        }).then((response) => {
-        expect(response.status).to.equal(200);
-        expect(response.body.sold).to.be.a('number');
-        expect(response.body.string).to.be.a('number');
-        expect(response.body.pending).to.be.a('number');
-        expect(response.body.available).to.be.a('number');
-        expect(response.body.totvsRuan).to.be.a('number');
-        expect(response.body.peric).to.be.a('number');
-        expect(response.body['Not available']).to.be.a('undefined');
-        
-        })
-    });
+      const bodyRequest = 
+          {
+              "sold": 12,
+              "string": 617,
+              "pending": 2,
+              "available": 264,
+              "totvsRuan": 7,
+              "peric": 90,
+              "Not available": 1
+          }
+      cy.request({
+      method: 'GET',
+      url: `https://petstore.swagger.io/v2/store/inventory`,
+      headers: {
+          'content-type': 'application/json'
+      },
+      body: bodyRequest,
+      }).then((response) => {
+      expect(response.status).to.equal(200);
+      
+      const asert = ['sold', 'string', 'pending', 'available', 'totvsRuan', 'peric', 'Not available'];
+  
+      asert.forEach(asert => {
+          expect(response.body[asert]).to.satisfy(n => typeof n === 'number' || n === null || n === undefined);
+      });
+      })
+  });
